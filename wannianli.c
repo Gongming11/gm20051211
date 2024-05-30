@@ -1,3 +1,4 @@
+//万年历
 #include<stdio.h>
 int tianshu[12]={31,28,31,30,31,30,31,31,30,31,30,31};      
 void yuefen(int n,int month,int firstday)
@@ -11,10 +12,10 @@ void yuefen(int n,int month,int firstday)
     int day=1;  
     while (day<=tianshu[month-1]) 
     {  
-        printf("%3d ", day++);  
+        printf("%3d ", day++); //输出3个字符长度的整数，不够用空格来填补，保证输出日历的整齐性   
         if ((firstday+day-1)%7==0) 
         {  
-            printf("\n");  
+            printf("\n");//每七天换一次行   
         }  
     }  
     printf("\n");
@@ -23,7 +24,7 @@ void printrili(int n, int w, int m)
 {    
     if (m) 
     {  
-        tianshu[1]=29;  
+        tianshu[1]=29; //如果是闰年，将2月天数改成29天 
     }    
     for (int month=1; month<=12; month++) 
     {  
@@ -84,7 +85,7 @@ int main()
             m=1;
         }else
         {
-            m=0;
+            m=0;//用公式判断该年是不是闰年
         }
     }
     printrili(n, w, m);
